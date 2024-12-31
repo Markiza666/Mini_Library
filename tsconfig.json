@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {                                                // Inställningar för kompilator
+            "target": "ES6",                                            // Vilken JS version kompilerar vi till
+            "module": "CommonJS",                                       // Modul styr hur ES6 moduler importeras, CommonJS är "default" om target är ES6
+            "strict": true,                                             // Strikt ger hårdare typ kontroll
+            "esModuleInterop": true,                                    // Fixar ett "mis-match" problem med ES6 Modules
+            "forceConsistentCasingInFileNames": true,                   // Löser problem när olika användare har "NON case sensitive" filsystem
+            "outDir": "./dist"                                          // I vilken mapp ska mina kompilerade filer sparas
+        },
+        "include": [                                                    // I vilken mapp/ar finns mina källfiler
+        "./src"                                                         
+        ],
+        "exclude": [],                                                  // Vilka mappar eller filer ska inte kollas för kompilering
+        "watchOptions": {                                               // Alternativ för hur mitt projekt ska bevakas för att se förändringar
+            "watchFile": "UseFsEvents",                                 // Använd filsystemets händelsehantering
+            "watchDirectory": "UseFsEvents",                            // Använd filsystemets händelsehantering
+            "fallbackPolling": "dynamicPriority",                       // Förändrar kontrollkön dynamiskt, dvs filer som inte ändras ofta kontrolleras mer sällan
+            "synchronousWatchDirectory": true,                          // Tillåter multipla ändringar i filer
+            "excludeDirectories": ["**/node_modules", "./dist"]         // Mappar som inte kollas
+        }
+    }

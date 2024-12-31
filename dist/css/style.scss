@@ -1,0 +1,125 @@
+*,html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    // background-color: rgb(171, 218, 218);
+    width: 100vw;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0 2rem 0;
+    font-family: 'Roboto';
+    .container {
+        width: 100%;
+        display: grid;
+        grid-template-columns:  1fr 1fr;
+        grid-template-areas: "header header"
+        "library library";
+        gap: .5rem;
+        @media screen and (min-width: 999px) {
+            max-width: 1024px;
+        }
+        .header {
+            // background-color: bisque;
+            grid-area: header;
+            h1 {
+                font-weight: 700;
+                line-height: 53.91px;
+                margin-left: 0;
+                padding-left: .5rem;
+                font-size: 1.5rem;}
+        }
+        .library {
+            // background-color: rgba(128, 255, 0, 0.425);
+            grid-area: library;
+            display: grid;
+            width: 100%;
+            margin: auto;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+            padding: 10px;
+            @media screen and (min-width: 999px) {
+                grid-template-columns: auto auto auto auto;
+                gap: 1.5rem;
+            }
+            .book {
+                aspect-ratio: 4/5;
+                width: 100%;
+                height: 100%;
+                .vl {
+                    margin: 0 1rem;
+                    border-left: 3px solid rgba(0, 0, 0, 0.2);
+                    height: 100%;
+                    position: relative;
+                    .book-title {
+                        position: absolute;
+                        left: 1rem;
+                        bottom: 1rem;
+                        color: rgba(255, 255, 255, 1);
+                        h5 {
+                            margin-bottom: .7rem;
+                            font-weight: 700;
+                            font-size: 1.5rem;
+                            line-height: 1.6rem;
+                        }
+                        p {
+                            font-weight: 400;
+                            font-size: 1rem;
+                            line-height: 11.72px;
+                        }
+                    }
+                }
+        //         @media screen and (min-width: 425px) {
+        //             flex: 100%;
+        //         }
+            
+        //         @media screen and (min-width: 768px) {
+        //             flex: 25%;
+        //             width: 35%;
+        //             aspect-ratio: 2/2;
+        //         }
+        
+        //         @media screen and (min-width: 999px) {
+        //             flex: 22%;
+        //             height: 65%;
+        //         }
+            }
+            #book1 {
+                background-color: rgba(242, 201, 76, 1);
+                background-image: linear-gradient(to bottom left,rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+            }
+            #book2 {
+                background-color: rgba(242, 153, 74, 1);
+                background-image: linear-gradient(to bottom left,rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+            }
+            #book3 {
+                background-color: rgba(235, 87, 87, 1);
+                background-image: linear-gradient(to bottom left,rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+            }
+            #book4 {
+                background-color: rgba(155, 81, 224, 1);
+                background-image: linear-gradient(to bottom left,rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+            }
+            #book5 {
+                background-color: rgba(86, 204, 242, 1);
+                background-image: linear-gradient(to bottom left,rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+            }
+            #book6 {
+                background-color: rgba(47, 128, 237, 1);
+                background-image: linear-gradient(to bottom left,rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+            }
+            #book7 {
+                background-color: rgba(111, 207, 151, 1);
+                background-image: linear-gradient(to bottom left,rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+            }
+            #book8 {
+                background-color: rgba(39, 174, 96, 1);
+                background-image: linear-gradient(to bottom left,rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+            }
+        }
+    }
+}
