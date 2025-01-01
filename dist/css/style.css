@@ -54,6 +54,7 @@ body .container .library .book {
   aspect-ratio: 4/5;
   width: 100%;
   height: 100%;
+  cursor: pointer;
 }
 body .container .library .book .vl {
   margin: 0 1rem;
