@@ -8,87 +8,149 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Secular+One&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/d9bd922866.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
         <h1>Mini Library</h1>
     </header>
+
     <main class="container">
         <section class="header">
             <h1>8 Classic Childrens books</h1>
         </section>
+
         <section class="library">
-            <section id="book1" class="book">
-                <article class="vl">
-                    <hgroup class="book-title">
-                        <h5>Madeline</h5>
-                        <p class="p-small"><small>Ludwig Bemelmans</small></p>
+            <article class="book">
+                <figure class="vl">
+                    <hgroup>
+                        <h5 class="book-title"></h5>
+                        <p class="small"></p>
                     </hgroup>
-                </article>
-            </section>
+                </figure>
+            </article>
     
-            <section id="book2" class="book">
-                <article class="vl">
-                    <hgroup class="book-title">
-                        <h5>The Tale of Peter Rabbit</h5>
-                        <p class="p-small"><small>Beatrix Potter</small></p>
+            <article class="book">
+                <figure class="vl">
+                    <hgroup>
+                        <h5 class="book-title"></h5>
+                        <p class="small"></p>
                     </hgroup>
-                </article>
-            </section>
+                </figure>
+            </article>
     
-            <section id="book3" class="book">
-                <article class="vl">
-                    <hgroup class="book-title">
-                        <h5>Charlotte’s Web</h5>
-                        <p class="p-small"><small>E. B. White</small></p>
+            <article class="book">
+                <figure class="vl">
+                    <hgroup>
+                        <h5 class="book-title"></h5>
+                        <p class="small"></p>
                     </hgroup>
-                </article>
-            </section>
+                </figure>
+            </article>
     
-            <section id="book4" class="book">
-                <article class="vl">
-                    <hgroup class="book-title">
-                        <h5>Harold and the Purple Crayon</h5>
-                        <p class="p-small"><small>Crockett Johnson</small></p>
+            <article class="book">
+                <figure class="vl">
+                    <hgroup>
+                        <h5 class="book-title"></h5>
+                        <p class="small"></p>
                     </hgroup>
-                </article>
-            </section>
+                </figure>
+            </article>
     
-            <section id="book5" class="book">
-                <article class="vl">
-                    <hgroup class="book-title">
-                        <h5>Where the Wild Things Are</h5>
-                        <p class="p-small"><small>Maurice Sendak</small></p>
+            <article class="book">
+                <figure class="vl">
+                    <hgroup>
+                        <h5 class="book-title"></h5>
+                        <p class="small"></p>
                     </hgroup>
-                </article>
-            </section>
+                </figure>
+            </article>
     
-            <section id="book6" class="book">
-                <article class="vl">
-                    <hgroup class="book-title">
-                        <h5>Goodnight Moon</h5>
-                        <p class="p-small"><small>Margaret Wise Brown</small></p>
+            <article class="book">
+                <figure class="vl">
+                    <hgroup>
+                        <h5 class="book-title"></h5>
+                        <p class="small"></p>
                     </hgroup>
-                </article>
-            </section>
+                </figure>
+            </article>
     
-            <section id="book7" class="book">
-                <article class="vl">
-                    <hgroup class="book-title">
-                        <h5>A Wrinkle in Time </h5>
-                        <p class="p-small"><small>Madeleine L’Engle</small></p>
+            <article class="book">
+                <figure class="vl">
+                    <hgroup>
+                        <h5 class="book-title"></h5>
+                        <p class="small"></p>
                     </hgroup>
-                </article>
-            </section>
+                </figure>
+            </article>
     
-            <section id="book8" class="book">
-                <article class="vl">
-                    <hgroup class="book-title">
-                        <h5>The Very Hungry Caterpillar</h5>
-                        <p class="p-small"><small>Eric Carle</small></p>
+            <article class="book">
+                <figure class="vl">
+                    <hgroup>
+                        <h5 class="book-title"></h5>
+                        <p class="small"></p>
                     </hgroup>
-                </article>
+                </figure>
+            </article>
+        </section>
+        
+        <section id="popup" class="modal">
+            <section class="modal-container">
+                <span class="back-container">
+                    <i class="fa-regular fa-arrow-left-long" id="back"></i>
+                </span>
+                
+                <aside class="aside-book">
+                    <!-- <article id="side-book"></article> -->
+                    <article class="book">
+                        <figure class="vl">
+                            <hgroup>
+                                <h5 class="book-title"></h5>
+                                <p class="small"></p>
+                            </hgroup>
+                        </figure>
+                    </article>
+
+                </aside>
+
+                <section class="modal-content">
+                    <article class="book-info">
+
+                        <h1 class="title"></h1>
+
+                        <h4 class="author"></h4>
+
+                        <p class="p plot"></p>
+
+                    </article>
+
+                    <article class="book-data">
+                        <dl class="data-1">
+                            <dt class="h6">Audience: </dt>
+                            <dd class="p audience"></dd>
+                        </dl>
+
+                        <dl class="data-2">
+                            <dt class="h6">First published: </dt>
+                            <dd class="p year"></dd>
+                        </dl>
+
+                        <dl class="data-3">
+                            <dt class="h6">Pages: </dt>
+                            <dd class="p pages"></dd>
+                        </dl>
+
+                        <dl class="data-4">
+                            <dt class="h6">Publisher:</dt>
+                            <dd class="p publisher"></dd>
+                        </dl>
+                    </article>
+
+                    <button class="read">Oh, I want to read it!</button>
+                </section>
+
             </section>
+
         </section>
     </main>
     <script type="module" src="main.js"></script>

@@ -13,6 +13,36 @@ body {
   padding: 1rem 0 2rem 0;
   font-family: "Roboto";
 }
+body .book {
+  background-color: darkgreen;
+  aspect-ratio: 4/5;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to bottom left, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+  cursor: pointer;
+}
+body .book .vl {
+  margin: 0 1rem;
+  border-left: 3px solid rgba(0, 0, 0, 0.2);
+  height: 100%;
+  position: relative;
+}
+body .book .vl hgroup {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  color: rgb(0, 0, 0);
+}
+body .book .vl hgroup .book-title {
+  margin-bottom: 0.7rem;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1.6rem;
+}
+body .book .vl hgroup .small {
+  font-weight: 400;
+  line-height: 11.72px;
+}
 body .container {
   width: 100%;
   display: grid;
@@ -26,6 +56,7 @@ body .container {
   }
 }
 body .container .header {
+  visibility: visible;
   grid-area: header;
 }
 body .container .header h1 {
@@ -36,6 +67,7 @@ body .container .header h1 {
   font-size: 1.5rem;
 }
 body .container .library {
+  visibility: visible;
   grid-area: library;
   display: grid;
   width: 100%;
@@ -50,64 +82,88 @@ body .container .library {
     gap: 1.5rem;
   }
 }
-body .container .library .book {
-  aspect-ratio: 4/5;
+body .container .modal {
+  background-color: #2c2c2c;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
   width: 100%;
   height: 100%;
+  display: none;
+}
+body .container .modal .modal-container {
+  margin: auto;
+  margin-top: 5%;
+  width: 70%;
+  height: 80%;
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  grid-template-areas: "a a" "b c" "b c" "b c" "b c" "b c" "b c" "b c";
+}
+body .container .modal .modal-container .back-container #back {
+  background-color: #7c7c7c;
+  color: #191919;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 50%;
+  margin: 1rem auto 1rem 0;
+  padding: 0.5rem;
+  top: 0;
+  left: 0;
   cursor: pointer;
 }
-body .container .library .book .vl {
-  margin: 0 1rem;
-  border-left: 3px solid rgba(0, 0, 0, 0.2);
-  height: 100%;
+body .container .modal .modal-container .aside-book {
+  background-color: rgb(255, 255, 255);
+  visibility: visible;
+  grid-area: b;
+  width: 80%;
+}
+body .container .modal .modal-container .modal-content {
+  background-color: aqua;
+  max-width: 40%;
+  grid-area: c;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0%;
   position: relative;
 }
-body .container .library .book .vl .book-title {
-  position: absolute;
-  left: 1rem;
-  bottom: 1rem;
-  color: rgb(255, 255, 255);
+body .container .modal .modal-container .modal-content .book-info {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
 }
-body .container .library .book .vl .book-title h5 {
-  margin-bottom: 0.7rem;
+body .container .modal .modal-container .modal-content .book-info .title {
   font-weight: 700;
-  font-size: 1.5rem;
-  line-height: 1.6rem;
+  font-size: 38px;
 }
-body .container .library .book .vl .book-title p {
+body .container .modal .modal-container .modal-content .book-info .author {
   font-weight: 400;
-  font-size: 1rem;
-  line-height: 11.72px;
+  font-size: 18px;
 }
-body .container .library #book1 {
-  background-color: rgb(242, 201, 76);
-  background-image: linear-gradient(to bottom left, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+body .container .modal .modal-container .modal-content .book-info .p {
+  font-weight: 400;
+  font-size: 14px;
+  margin: 1rem 0;
 }
-body .container .library #book2 {
-  background-color: rgb(242, 153, 74);
-  background-image: linear-gradient(to bottom left, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+body .container .modal .modal-container .modal-content .book-data {
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas: "d e" "f g";
 }
-body .container .library #book3 {
-  background-color: rgb(235, 87, 87);
-  background-image: linear-gradient(to bottom left, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+body .container .modal .modal-container .modal-content .book-data .data-1 {
+  grid-area: d;
 }
-body .container .library #book4 {
-  background-color: rgb(155, 81, 224);
-  background-image: linear-gradient(to bottom left, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+body .container .modal .modal-container .modal-content .book-data .data-2 {
+  grid-area: e;
 }
-body .container .library #book5 {
-  background-color: rgb(86, 204, 242);
-  background-image: linear-gradient(to bottom left, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+body .container .modal .modal-container .modal-content .book-data .data-3 {
+  grid-area: f;
 }
-body .container .library #book6 {
-  background-color: rgb(47, 128, 237);
-  background-image: linear-gradient(to bottom left, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
-}
-body .container .library #book7 {
-  background-color: rgb(111, 207, 151);
-  background-image: linear-gradient(to bottom left, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
-}
-body .container .library #book8 {
-  background-color: rgb(39, 174, 96);
-  background-image: linear-gradient(to bottom left, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+body .container .modal .modal-container .modal-content .book-data .data-4 {
+  grid-area: g;
 }/*# sourceMappingURL=style.css.map */
