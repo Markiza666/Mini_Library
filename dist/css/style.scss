@@ -5,7 +5,6 @@
 }
 
 body {
-    // background-color: rgb(171, 218, 218);
     width: 100vw;
     margin: auto;
     display: flex;
@@ -15,7 +14,6 @@ body {
     font-family: 'Roboto';
     
     .book {
-        background-color: darkgreen;
         aspect-ratio: 4/5;
         width: 100%;
         height: 100%;
@@ -30,7 +28,7 @@ body {
                 position: absolute;
                 left: 1rem;
                 bottom: 1rem;
-                color: rgb(0, 0, 0);
+                color: rgb(255, 255, 255);
                 .book-title {
                     margin-bottom: .7rem;
                     font-weight: 700;
@@ -57,7 +55,6 @@ body {
         }
 
         .header {
-            // background-color: bisque;
             visibility: visible;
             grid-area: header;
             h1 {
@@ -69,7 +66,6 @@ body {
         }
 
         .library {
-            // background-color: rgba(128, 255, 0, 0.425);
             visibility: visible;
             grid-area: library;
             display: grid;
@@ -95,82 +91,83 @@ body {
             display: none;
 
             .modal-container {
-                // background-color: #df8c8c88;
                 margin: auto;
                 margin-top: 5%;
                 width: 70%;
-                height: 80%;
+                height: 70%;
                 display: grid;
-                gap: .5rem;
                 grid-template-columns: repeat(2, 1fr);
-                grid-template-rows: repeat(8, 1fr);
-                grid-template-areas: "a a" "b c" "b c" "b c" "b c" "b c" "b c" "b c";
+                grid-template-rows: 15% 85%;
+                grid-template-areas: "a a" "b c";
 
-                .back-container {
-                    // grid-area: a;
-                    #back {
-                        background-color: #7c7c7c;
+                
+                #back {
+                    background-color: #7c7c7c;
+                    color: #000000;
+                    width: 48px;
+                    border-radius: 50%;
+                    margin: 1rem auto 1rem 0;
+                    padding: .5rem;
+                    top: 0;
+                    left: 0;
+                    cursor: pointer;
+                }
+
+                .side-book {
+                    grid-area: b;
+                    width: 90%;
+                    hgroup {
+                        left: 2rem;
+                        bottom: 2rem;
                         color: #191919;
-                        font-size: 1rem;
-                        font-weight: bold;
-                        border-radius: 50%;
-                        margin: 1rem auto 1rem 0;
-                        padding: .5rem;
-                        top: 0;
-                        left: 0;
-                        cursor: pointer;
-    
-                        // @media screen and (min-width: 420px) {
-                        //     font-size: 1.75rem;
-                        // }
-    
-                        // @media screen and (min-width: 768px) {
-                        //     font-size: 2.5rem;
-                        // }
+                        .book-title {
+                            margin-bottom: .7rem;
+                            font-weight: 700;
+                            font-size: 38px;
+                            line-height: 44.53px;
+                        }
+                        .small {
+                            font-weight: 400;
+                            font-size: 18px;
+                            line-height: 21.09px;
+                        }
                     }
                 }
 
-                .aside-book {
-                    background-color: rgb(255, 255, 255);
-                    visibility: visible;
-                    grid-area: b;
-                    width: 80%;
-                }
-
                 .modal-content {
-                    background-color: aqua;
-                    max-width: 40%;
+                    max-width:100%;
                     grid-area: c;
                     display: flex;
                     flex-direction: column;
                     flex:  1 1 0%;
                     position: relative;
-                    // @media screen and (min-width: 425px) {
-                    //     width: 65%;
-                    // }
-                
-                    // @media screen and (min-width: 999px) {
-                    //     width: 50%;
-                    // }
+
                     .book-info {
-                        width: 50%;
+                        color: white;
                         display: flex;
                         flex-direction: column;
+
                         .title {
                             font-weight: 700;
                             font-size: 38px;
                         }
+
                         .author {
                             font-weight: 400;
                             font-size: 18px;
                         }
+                        
                         .p {
                             font-weight: 400;
-                            font-size: 14px;
-                            margin: 1rem 0;
+                            font-size: 16px;
+                            margin: 2rem 0 1rem 0;
                         }
                     }
+                    
                     .book-data {
+                        background-color: rgba(196, 196, 196, 0.08);
+                        padding: 1rem;
+                        color: white;
                         display: grid;
                         gap: .5rem;
                         grid-template-columns: repeat(2, 1fr);
@@ -192,6 +189,20 @@ body {
                         .data-4 {
                             grid-area: g;
                         }
+                    }
+
+                    .read {
+                        font-size: 1rem;
+                        font-weight: bold;
+                        color: black;
+                        background: white;
+                        border-width: 2px;
+                        border-style: solid;
+                        border-color: black;
+                        border-image: initial;
+                        border-radius: 5px;
+                        padding: 1rem 1.25rem;
+                        margin: auto auto 0px 0px;
                     }
                 }
             }

@@ -1,22 +1,25 @@
-import { getBooksInfo, bookData } from './apiRequest';
-import { domBooks, modalElements, mainPagePointers } from './domElements';
+import { bookData } from './interfaces.js';
+import { getBooksInfo } from './apiRequest.js';
+import { mainPagePointers } from './domElements.js';
+import { presentBook } from './modalFunctions.js';
 
 
+const showLibrary = (libraryData: bookData[]) => {
+    libraryData.forEach(book => {
+        if(mainPagePointers.bookNames[(book.id - 1)]) {
+            mainPagePointers.bookNames[(book.id - 1)].innerHTML = book.title;
+        }
+        if(mainPagePointers.bookAuthors[(book.id - 1)]) {
+            mainPagePointers.bookAuthors[(book.id - 1)].innerHTML = book.author;
+        }
+        if(mainPagePointers.bookArea[(book.id - 1)]) {
+            (mainPagePointers.bookArea[(book.id - 1)] as HTMLElement).style.backgroundColor = book.color;
+            mainPagePointers.bookArea[(book.id - 1)].addEventListener('click', () => {presentBook(book);});
+        }
+        else {
+            console.log('Problem!');
+        }
+    });
+}
 
-// const bookShelf: HTMLCollectionOf<Element> = document.getElementsByClassName( 'library');
-
-// const showLibrary = ( libraryData: Array<object> ) => {
-//     let books: string = '';
-//     let i: number = 1;
-//     for ( const book in libraryData ) {
-//         let c: number = i;
-//         // books += '<section id="book' + c + '" class="book"><article class="vl"><hgroup class="book-title"><h5>' + book.title + '</h5><p class="p-small"><small>' + book.author + '</small></p></hgroup></article></section>';
-//         i++;
-//         if (Object.prototype.hasOwnProperty.call( libraryData, book )) {
-//             domObjects[c].addEventListener('click', () => {
-//                 presentBook(libraryData[c])       // Lägger en händelselyssnare på böckerna
-//             });
-//         }
-//     }
-//     bookShelf[0].innerHTML = books;
-// }
+getBooksInfo().then(data => {showLibrary(data)}).catch(error => {console.log(error)});

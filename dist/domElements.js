@@ -1,6 +1,4 @@
-import { domPointers, modalElements } from './interfaces.js';
-
-const modalElements: modalElements = {
+const modalElements = {
     booksPopup: document.getElementById('popup'),
     sideBook: document.getElementById('side-book'),
     sideTitle: document.getElementById('side-title'),
@@ -13,15 +11,13 @@ const modalElements: modalElements = {
     bookAudience: document.getElementById('audience'),
     bookDescription: document.getElementById('plot'),
     backBtn: document.getElementById('back') // Skapar en pekare till stängningsknappen, krysset
-}
-
+};
 // Objekt/arrayer med pekare till element som ska vara åtkomliga
-const mainPagePointers: domPointers = {
+const mainPagePointers = {
     bookNames: document.getElementsByClassName('book-title'),
     bookAuthors: document.getElementsByClassName('small'),
     bookArea: document.getElementsByClassName('book'),
     libHeader: document.getElementsByClassName('header'),
     domLibrary: document.getElementsByClassName('library')
-}
-
+};
 export { modalElements, mainPagePointers };

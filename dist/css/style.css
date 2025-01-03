@@ -14,7 +14,6 @@ body {
   font-family: "Roboto";
 }
 body .book {
-  background-color: darkgreen;
   aspect-ratio: 4/5;
   width: 100%;
   height: 100%;
@@ -31,7 +30,7 @@ body .book .vl hgroup {
   position: absolute;
   left: 1rem;
   bottom: 1rem;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
 }
 body .book .vl hgroup .book-title {
   margin-bottom: 0.7rem;
@@ -96,18 +95,16 @@ body .container .modal .modal-container {
   margin: auto;
   margin-top: 5%;
   width: 70%;
-  height: 80%;
+  height: 70%;
   display: grid;
-  gap: 0.5rem;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(8, 1fr);
-  grid-template-areas: "a a" "b c" "b c" "b c" "b c" "b c" "b c" "b c";
+  grid-template-rows: 15% 85%;
+  grid-template-areas: "a a" "b c";
 }
-body .container .modal .modal-container .back-container #back {
+body .container .modal .modal-container #back {
   background-color: #7c7c7c;
-  color: #191919;
-  font-size: 1rem;
-  font-weight: bold;
+  color: #000000;
+  width: 48px;
   border-radius: 50%;
   margin: 1rem auto 1rem 0;
   padding: 0.5rem;
@@ -115,15 +112,28 @@ body .container .modal .modal-container .back-container #back {
   left: 0;
   cursor: pointer;
 }
-body .container .modal .modal-container .aside-book {
-  background-color: rgb(255, 255, 255);
-  visibility: visible;
+body .container .modal .modal-container .side-book {
   grid-area: b;
-  width: 80%;
+  width: 90%;
+}
+body .container .modal .modal-container .side-book hgroup {
+  left: 2rem;
+  bottom: 2rem;
+  color: #191919;
+}
+body .container .modal .modal-container .side-book hgroup .book-title {
+  margin-bottom: 0.7rem;
+  font-weight: 700;
+  font-size: 38px;
+  line-height: 44.53px;
+}
+body .container .modal .modal-container .side-book hgroup .small {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21.09px;
 }
 body .container .modal .modal-container .modal-content {
-  background-color: aqua;
-  max-width: 40%;
+  max-width: 100%;
   grid-area: c;
   display: flex;
   flex-direction: column;
@@ -131,7 +141,7 @@ body .container .modal .modal-container .modal-content {
   position: relative;
 }
 body .container .modal .modal-container .modal-content .book-info {
-  width: 50%;
+  color: white;
   display: flex;
   flex-direction: column;
 }
@@ -145,10 +155,13 @@ body .container .modal .modal-container .modal-content .book-info .author {
 }
 body .container .modal .modal-container .modal-content .book-info .p {
   font-weight: 400;
-  font-size: 14px;
-  margin: 1rem 0;
+  font-size: 16px;
+  margin: 2rem 0 1rem 0;
 }
 body .container .modal .modal-container .modal-content .book-data {
+  background-color: rgba(196, 196, 196, 0.08);
+  padding: 1rem;
+  color: white;
   display: grid;
   gap: 0.5rem;
   grid-template-columns: repeat(2, 1fr);
@@ -166,4 +179,18 @@ body .container .modal .modal-container .modal-content .book-data .data-3 {
 }
 body .container .modal .modal-container .modal-content .book-data .data-4 {
   grid-area: g;
+}
+body .container .modal .modal-container .modal-content .read {
+  font-size: 1rem;
+  font-weight: bold;
+  color: black;
+  background: white;
+  border-width: 2px;
+  border-style: solid;
+  border-color: black;
+  -o-border-image: initial;
+     border-image: initial;
+  border-radius: 5px;
+  padding: 1rem 1.25rem;
+  margin: auto auto 0px 0px;
 }/*# sourceMappingURL=style.css.map */
