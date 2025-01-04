@@ -12,7 +12,7 @@ const modalElements: modalElements = {
     bookPages: document.getElementById('pages'),
     bookAudience: document.getElementById('audience'),
     bookDescription: document.getElementById('plot'),
-    backBtn: document.getElementById('back') // Skapar en pekare till stängningsknappen, krysset
+    backBtn: document.getElementById('back') // Skapar en pekare till bakåtknappen, pilen 
 }
 
 // Objekt/arrayer med pekare till element som ska vara åtkomliga
@@ -24,4 +24,8 @@ const mainPagePointers: domPointers = {
     domLibrary: document.getElementsByClassName('library')
 }
 
-export { modalElements, mainPagePointers };
+
+const searchForm: HTMLFormElement = (document.getElementById('search-form') as HTMLFormElement);
+
+
+export { modalElements, mainPagePointers, searchForm };

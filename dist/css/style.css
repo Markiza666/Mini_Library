@@ -56,14 +56,50 @@ body .container {
 }
 body .container .header {
   visibility: visible;
+  margin: 1rem 0.5rem 0 0.5rem;
   grid-area: header;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media screen and (min-width: 768px) {
+  body .container .header {
+    flex-direction: row;
+  }
 }
 body .container .header h1 {
   font-weight: 700;
-  line-height: 53.91px;
-  margin-left: 0;
-  padding-left: 0.5rem;
+  line-height: 36px;
   font-size: 1.5rem;
+  flex: 50%;
+  margin-bottom: 1rem;
+}
+@media screen and (min-width: 768px) {
+  body .container .header h1 {
+    margin-bottom: 0;
+  }
+}
+body .container .header .search-form {
+  flex: 50%;
+  display: flex;
+  justify-content: center;
+}
+@media screen and (min-width: 768px) {
+  body .container .header .search-form {
+    justify-content: end;
+  }
+}
+body .container .header .search-form input {
+  width: 50%;
+  margin-right: 1rem;
+  padding-left: 0.5rem;
+  border-radius: 3px;
+  border: solid 1px #5f5f5f;
+}
+body .container .header .search-form .searchbtn {
+  padding: 0 0.5rem;
+  border-radius: 3px;
+  border: solid 1px #5f5f5f;
 }
 body .container .library {
   visibility: visible;
@@ -93,9 +129,9 @@ body .container .modal {
 }
 body .container .modal .modal-container {
   margin: auto;
-  margin-top: 5%;
-  width: 70%;
-  height: 70%;
+  margin-top: 1%;
+  width: 60%;
+  height: 80%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 15% 85%;
@@ -137,7 +173,6 @@ body .container .modal .modal-container .modal-content {
   grid-area: c;
   display: flex;
   flex-direction: column;
-  flex: 1 1 0%;
   position: relative;
 }
 body .container .modal .modal-container .modal-content .book-info {
@@ -156,11 +191,11 @@ body .container .modal .modal-container .modal-content .book-info .author {
 body .container .modal .modal-container .modal-content .book-info .p {
   font-weight: 400;
   font-size: 16px;
-  margin: 2rem 0 1rem 0;
+  margin: 1rem 0;
 }
 body .container .modal .modal-container .modal-content .book-data {
-  background-color: rgba(196, 196, 196, 0.08);
-  padding: 1rem;
+  background-color: rgba(90, 90, 90, 0.87);
+  padding: 0.8rem;
   color: white;
   display: grid;
   gap: 0.5rem;

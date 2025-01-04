@@ -1,8 +1,11 @@
-import { getBooksInfo } from './apiRequest.js';
+import { bookArray } from './apiRequest.js';
 import { mainPagePointers } from './domElements.js';
 import { presentBook } from './modalFunctions.js';
+import { initSearch } from './search.js';
+const titlesOfBooks = [];
 const showLibrary = (libraryData) => {
     libraryData.forEach(book => {
+        titlesOfBooks.push(book.title.toUpperCase().replace(/[^\w\s]/g, '').trimEnd());
         if (mainPagePointers.bookNames[(book.id - 1)]) {
             mainPagePointers.bookNames[(book.id - 1)].innerHTML = book.title;
         }
@@ -17,5 +20,8 @@ const showLibrary = (libraryData) => {
             console.log('Problem!');
         }
     });
+    console.log(titlesOfBooks);
 };
-getBooksInfo().then(data => { showLibrary(data); }).catch(error => { console.log(error); });
+showLibrary(bookArray);
+initSearch();
+export { titlesOfBooks };

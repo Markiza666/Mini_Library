@@ -1,9 +1,10 @@
 {
     "compilerOptions": {
-        "target": "ES6", // Vilken JS version ska vi kompilera till
+        "target": "ESNext", // Vilken JS version ska vi kompilera till
         "strict": true,
         "outDir": "./dist", // Var ska JS-filen hamna? I vilken mapp?
-        "forceConsistentCasingInFileNames": true
+        "forceConsistentCasingInFileNames": true,
+        "module": "ESNext"
     },
     "watchOptions": {                                               // Alternativ för hur mitt projekt ska bevakas för att se förändringar
         "watchFile": "UseFsEvents",                                 // Använd filsystemets händelsehantering

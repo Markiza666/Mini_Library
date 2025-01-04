@@ -20,4 +20,5 @@ const mainPagePointers = {
     libHeader: document.getElementsByClassName('header'),
     domLibrary: document.getElementsByClassName('library')
 };
-export { modalElements, mainPagePointers };
+const searchForm = document.getElementById('search-form');
+export { modalElements, mainPagePointers, searchForm };

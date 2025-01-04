@@ -39,8 +39,12 @@ const showDetails = (details) => {
     }
 };
 // Funktionen för att öppna modal/popup och presentera informationen
-let presentBook = (dataToPresent) => {
+const presentBook = (dataToPresent) => {
     showModal(dataToPresent.color);
     showDetails(dataToPresent);
 };
-export { presentBook };
+const bookNotExist = (title) => {
+    const alertText = title + " does not exist in our mini library.";
+    alert(alertText);
+};
+export { presentBook, bookNotExist };
