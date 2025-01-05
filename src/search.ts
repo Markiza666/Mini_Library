@@ -3,7 +3,7 @@ import { titlesOfBooks } from "./main.js";
 import { presentBook, bookNotExist } from "./modalFunctions.js";
 import { bookArray } from "./apiRequest.js";
 
-// Funktion son initierar sökformuläret med lyssnare som 
+// Funktion son initierar sökformuläret med lyssnare som hanterar händelser, t.ex. musklick
 const initSearch = (): void => {
     searchForm.search.addEventListener("click", (event: MouseEvent) => {
         event.preventDefault();
@@ -13,6 +13,7 @@ const initSearch = (): void => {
     searchForm.addEventListener("submit", (event: SubmitEvent) => {
         event.preventDefault();
 
+        // Skapar en konstant med formulärets info med hjälp av klassen FormData (JavaScript) 
         const formData: FormData = new FormData(searchForm);
         const titleToFind: string = (Object.fromEntries(formData)).search.toString();
     

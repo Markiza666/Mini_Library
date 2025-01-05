@@ -1,5 +1,4 @@
-// Definierar en egen typ för API data
-interface bookData {
+interface bookData {        
     id: number;
     title: string;
     author: string;

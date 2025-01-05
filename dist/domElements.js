@@ -1,3 +1,4 @@
+// Array med pekare till objekt som ska vara åtkomliga i HTML DOM
 const modalElements = {
     booksPopup: document.getElementById('popup'),
     sideBook: document.getElementById('side-book'),
@@ -10,7 +11,7 @@ const modalElements = {
     bookPages: document.getElementById('pages'),
     bookAudience: document.getElementById('audience'),
     bookDescription: document.getElementById('plot'),
-    backBtn: document.getElementById('back') // Skapar en pekare till stängningsknappen, krysset
+    backBtn: document.getElementById('back') // Skapar en pekare till bakåtknappen, pilen 
 };
 // Objekt/arrayer med pekare till element som ska vara åtkomliga
 const mainPagePointers = {
@@ -20,5 +21,6 @@ const mainPagePointers = {
     libHeader: document.getElementsByClassName('header'),
     domLibrary: document.getElementsByClassName('library')
 };
+// Pekare till sök formuläret
 const searchForm = document.getElementById('search-form');
 export { modalElements, mainPagePointers, searchForm };

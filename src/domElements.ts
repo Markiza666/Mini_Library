@@ -1,5 +1,6 @@
 import { domPointers, modalElements } from './interfaces.js';
 
+// Array med pekare till objekt som ska vara åtkomliga i HTML DOM
 const modalElements: modalElements = {
     booksPopup: document.getElementById('popup'),
     sideBook: document.getElementById('side-book'),
@@ -24,7 +25,7 @@ const mainPagePointers: domPointers = {
     domLibrary: document.getElementsByClassName('library')
 }
 
-
+// Pekare till sök formuläret
 const searchForm: HTMLFormElement = (document.getElementById('search-form') as HTMLFormElement);
 
 

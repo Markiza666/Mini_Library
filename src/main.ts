@@ -4,9 +4,13 @@ import { mainPagePointers } from './domElements.js';
 import { presentBook } from './modalFunctions.js';
 import { initSearch } from './search.js';
 
+
+// Skapar en bas för att kunna få en sökbar array med boktitlar
 const titlesOfBooks: Array<string> = [];
 
-const showLibrary = (libraryData: bookData[]) => {
+
+// Funktion som loopar igenom ett objekt med bookData och tar ut infon för att visa i HTML och till den sökbara arrayen
+const showLibrary = (libraryData: bookData[]): void => {
     libraryData.forEach(book => {
 
         // Gör en array med titlarna som konstanter som fixas till, görs till stora bokstäver, tar bort allt som inte är bokstäver, siffror eller mellanslag med replace (^ i det reguljära uttrycket betyder NOT) och trimmar bort mellanslag i slutet av strängen. Allt för att förenkla sökning.
@@ -18,10 +22,10 @@ const showLibrary = (libraryData: bookData[]) => {
         }
 
         // Om pekaren till platsen för bokens författare inte är null så läggs författarens namn in i HTML-elementet
-        else if(mainPagePointers.bookAuthors[(book.id - 1)]) {
-            mainPagePointers.bookAuthors[(book.id - 1)].innerHTML = book.author;
+        if(mainPagePointers.bookAuthors[(book.id - 1)]) {
+            mainPagePointers.bookAuthors[(book.id - 1)].innerHTML = book.author; 
         }
-        else if(mainPagePointers.bookArea[(book.id - 1)]) {
+        if(mainPagePointers.bookArea[(book.id - 1)]) {
 
             // Skapar pekaren till själva boken som HTMLElement för att kunna sätta style.backgroundColor.
             (mainPagePointers.bookArea[(book.id - 1)] as HTMLElement).style.backgroundColor = book.color;

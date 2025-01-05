@@ -8,19 +8,18 @@ import { bookData } from './interfaces.js';
 // **************************************************
 
 
-// Öppnar modalen för att visa information om klickad himlakropp med korrekt färg till vänster
+// Öppnar modalen för att visa information om klickad bok med korrekt färg
 const showModal = (color: string): void => {
 
-    // Visar modalen med de extra färgringarna och döljer bakomliggande element
+    // Visar modalen med boken i rätt färg
     if(modalElements.booksPopup) {
         modalElements.booksPopup.style.display = 'block';
     }
-    // modalElements.sideBook.style.visibility = 'hidden';
     if(modalElements.sideBook) {
         modalElements.sideBook.style.backgroundColor = color;
     }
 
-    // Lägger lyssnare på stängningsknappen och säger vad som ska hända
+    // Lägger lyssnare på bakåtknappen och säger vad som ska hända, dvs dölja modalen
     if(modalElements.backBtn) {
         modalElements.backBtn.addEventListener('click', () => {
             if(modalElements.booksPopup) {
@@ -30,7 +29,7 @@ const showModal = (color: string): void => {
     }
 }
 
-// Lägger in informationsdetaljer i modalen
+// Lägger in informationsdetaljer i modalen om alla pekare har blivit korrekta
 const showDetails = (details: bookData): void => {
     if(modalElements.bookTitle && modalElements.bookAuthor && modalElements.bookPublisher && modalElements.bookYear && modalElements.bookPages && modalElements.bookAudience && modalElements.bookDescription) {
         modalElements.bookTitle.innerText = details.title;
@@ -54,7 +53,7 @@ const presentBook = (dataToPresent: bookData): void => {
     showDetails(dataToPresent);
 }
 
-
+// Om boken inte finns vid sökning så visas en alert
 const bookNotExist = (title: string): void => {
     const alertText: string = title + " does not exist in our mini library.";
     alert(alertText);
